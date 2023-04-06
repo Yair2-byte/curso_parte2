@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA MEDIA DE LA EDAD  </h1>
+<script>
+
+    function Saltarlinea(){
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+//aqui declaramos las dos funciones para ahorrar lineas de codigo 
+    function imprimir (frase){
+        document.write(frase);
+        Saltarlinea();
+    }
+
+    var numeroMiembros = parseInt(prompt("Ingrese el numero de miembros"));
+    var contador = 1;
+    var totalEdades =0;
+    while(contador <= numeroMiembros){
+
+        edad = parseInt(prompt("ingrese las edades de los miembros"));
+        totalEdades = totalEdades + edad;
+        contador ++;
+    }
+    mediaEdades = totalEdades/numeroMiembros;
+    imprimir("La media de las edades es " + mediaEdades);
+    imprimir ("fin")
+</script>

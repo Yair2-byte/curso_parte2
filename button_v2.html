@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+<input/>
+<button>Verificar si acerto el secreto</button>
+
+<script>    
+//var secreto = Math.round(Math.random()*10);
+function aleatorio(){
+    return  Math.round(Math.random()*10);
+}
+
+function sorteaNumeros(cantidad){
+    var secreto = [];
+    var contador = 1;
+    while(contador<=cantidad){
+        var numeroAleatorio=aleatorio();
+        console.log(numeroAleatorio)
+        var encontrado = false;
+
+        if(numeroAleatorio !=0){
+            for(var posicion = 0; posicion < secreto.length; posicion++){
+            if(numeroAleatorio ==secreto[posicion]){
+                encontrado==true;
+                break;
+            }
+        }
+        if(encontrado==false){
+            secreto.push(numeroAleatorio); //para agregar un valor a la array
+            contador++;
+
+        }
+        }
+        
+    }
+    return secreto;
+}
+
+var secreto = sorteaNumeros(4);   
+console.log(secreto);
+var input = document.querySelector("input");
+input.focus();
+
+    function verificar(){
+        var encontrado = false;
+        for(var posicion = 0;secreto.length; posicion++){
+        if(parseInt(input.value) == secreto[posicion]){
+            alert("usted acerto");
+            encontrado = true;
+            break;
+        }
+           
+  }
+        if(encontrado=false){
+            alert("usted erro")
+        }
+      input.value="";
+      input.focus();
+        }
+
+    
+    var button = document.querySelector("button");
+    button.onclick=verificar;
+
+
+//programa donde se usa el boton y tambien amplicamos el uso de un array
+</script>

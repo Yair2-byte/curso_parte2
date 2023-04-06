@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA AÑO MUNDIAL DE LA FIFA</h1>
+<script>
+
+    function Saltarlinea(){
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+//aqui declaramos las dos funciones para ahorrar lineas de codigo 
+    function imprimir (frase){
+        document.write(frase);
+        Saltarlinea();
+    }
+    var anhoMundial = 1930;
+    //alert("Hubo un mundial de la fifa en el anho: " + anhoMundial);
+    var limite = parseInt(prompt("Ingrese el año limite para calcular"))
+// uso del ciclo while para poder iterar hasta que la condicion sea verdadera y debemos de tener cuidado con las condicion
+// ya que si no sale del bucle se puede trabar la maquina 
+    while(anhoMundial < limite){
+        imprimir("Hubo un mundial de la fifa en el anho: " + anhoMundial);
+        anhoMundial = anhoMundial + 4;
+    }
+    imprimir("Fin")
+
+
+    </script>
